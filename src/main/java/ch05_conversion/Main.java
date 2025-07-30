@@ -35,6 +35,14 @@ public class Main {
         System.out.println("변형 : " + (char) cast4);
         // 다운캐스팅 방법 #2
         char casted5 = (char)cast5;
+        /*
+            upcasting 의 경우에는 메모리 용량이 커지면 되니까 기존 데이터가 변형이 일어날 가능성이 없어서
+            암시적(implicit)으로 변형이 가능한 반면, downcasting 의 경우에는 데이터 용량이 축소되는 과정에서
+            변수가 메모리 용량을 벗어나게 되는 경우가 있습니다
+            용량 오버에 해당하는 현상을 미리 점검하기 위해 다운캐스팅 시에는 명시적(explicit) 으로만 변형이 가능합니다.
+
+            -> 현재는 기본 자료형을 기준으로 예시를 들었지만 나중에는 참조자료형 캐스팅 개념과 연결됩니다.
+        */
         System.out.println("원형 : " + cast5);
         System.out.println("변형 : " + casted5);
 
