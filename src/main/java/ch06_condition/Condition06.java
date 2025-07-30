@@ -18,7 +18,24 @@ public class Condition06 {
         int score = scanner.nextInt();
 
         char grade;
-        if(score>100){
+//        if(score>100){
+//            grade = 'X';
+//        } else if(score>=90){
+//            grade = 'A';
+//        } else if (score>=80){
+//            grade ='B';
+//        }else if (score>=70){
+//            grade ='C';
+//        }else if (score>=60){
+//            grade ='D';
+//        }else if (score>=0){
+//            grade ='F';
+//        }else{
+//            grade ='X';
+//        }
+
+        //논리 연산자를 퐇맣나 풀이
+        if(score>100 || score < 0){
             grade = 'X';
         } else if(score>=90){
             grade = 'A';
@@ -28,11 +45,10 @@ public class Condition06 {
             grade ='C';
         }else if (score>=60){
             grade ='D';
-        }else if (score>=0){
+        } else {
             grade ='F';
-        }else{
-            grade ='X';
         }
+
         System.out.println("당신의 점수는 " + score + "점이고, 학점은 " + grade + "입니다.");
     }
 }
