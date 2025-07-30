@@ -34,7 +34,6 @@ public class Main {
         System.out.println("원형 : " + cast4);
         System.out.println("변형 : " + (char) cast4);
         // 다운캐스팅 방법 #2
-        char casted5 = (char)cast5;
         /*
             upcasting 의 경우에는 메모리 용량이 커지면 되니까 기존 데이터가 변형이 일어날 가능성이 없어서
             암시적(implicit)으로 변형이 가능한 반면, downcasting 의 경우에는 데이터 용량이 축소되는 과정에서
@@ -43,9 +42,15 @@ public class Main {
 
             -> 현재는 기본 자료형을 기준으로 예시를 들었지만 나중에는 참조자료형 캐스팅 개념과 연결됩니다.
         */
+        char casted5 = (char)cast5;
         System.out.println("원형 : " + cast5);
         System.out.println("변형 : " + casted5);
 
+        /*
+            int 가 21억 정도까지의 범위인데 더 큰 숫자로 표기하기 위해서는
+            정수 기준으로 long 사용
+            ( SQL 문에서는 long 이 아니라 bigint 라고 씀 )
+        */
 
     }
 }
