@@ -1,7 +1,7 @@
 package ch08_methods;
 
 import java.util.Scanner;
-public class Method2 {
+public class Method02 {
     public static String getStar(int rows, int option){
         String result = "";
         switch (option){
@@ -40,9 +40,11 @@ public class Method2 {
                     for (int j = rows; j - i > 0; j--) {
                         System.out.print("*");
                     }
-
                     System.out.println();
                 }
+                break;
+            default:
+                System.out.println("잘못된 번호를 선택하셨습니다.");
         }
 
 
@@ -64,7 +66,6 @@ public class Method2 {
         System.out.println("4. 오른쪽으로 치우친 감소하는 별");
         System.out.print("선택 >> ");
         choice = scanner.nextInt();
-
         starResult = getStar(rowOfStars, choice);
         System.out.println(starResult);
         /*

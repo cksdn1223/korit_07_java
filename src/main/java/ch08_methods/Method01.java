@@ -48,7 +48,6 @@ public class Method01 {
 //        System.out.println(call3()+"!");
 //        String name = "김일";
 //        System.out.println(name + " 학생의 학점은 " + call4(4.5) + "입니다.");
-
         Scanner scanner = new Scanner(System.in);
         String myName = "";
         int myAge = 0;
