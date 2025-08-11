@@ -27,7 +27,7 @@ public class CentralControl{
             return; //메서드 종료 키워드
         }
         deviceArray[emptyIndex] = device;
-        System.out.println("장치가 연결되었습니다.");
+        System.out.println(device.getClass().getSimpleName() + "장치가 연결되었습니다.");
     }
 
     private int checkEmpty() {  // 메서드인데 private
@@ -41,4 +41,97 @@ public class CentralControl{
         return -1;
 
     }
+
+    public void powerOn() {
+        for(int i = 0 ; i < deviceArray.length ; i++){
+            if(deviceArray[i] ==null) {
+                System.out.println("장치가 없어 전원을 켜지 않았습니다.");
+                continue;
+            }
+            deviceArray[i].on();
+        }
+//        for (Power power : deviceArray) {
+//            if(power == null) {
+//                System.out.println("장치가 없어 전원을 켜지 않았습니다.");
+//                continue;
+//            }
+//            power.on();
+//        }
+    }
+
+    public void powerOff() {
+        for (Power device : deviceArray) {
+            if(device == null) {
+                System.out.println("장치가 없어 전원을 끄지 않았습니다.");
+                continue;
+            }
+            device.off();
+        }
+    }
+    /*
+    객체명.getclass().getSimpleName() 을 활용하면 클래스 네임만 출력된다는 것을 확인
+    deviceArray를 반복해서 몇번 인덱스에 어떤 클래스의 객체가 있는지 표시
+    showInfo 메서드
+    실행 예
+    슬롯 [ 1 ] 번 : Computer
+    슬롯 [ 2 ] 번 : LED
+    ...
+    슬롯 [ 10 ] 번 : null
+     */
+    public void showInfo() {
+        int i = 1;
+        String name = "";
+        for(Power power : deviceArray){
+            if (power == null) name = "Empty";
+            else name = power.getClass().getSimpleName();
+            System.out.println("슬롯 [ " + i++ + " ] 번 : " + name);
+        }
+    }
+
+    public void performSpecificMethod() {
+        for(Power device : deviceArray){
+            // Power의 서브클래스가 잘못된 다운캐스팅을 하지 않도록 하는 조건문
+            if(device instanceof AirConditioner){ // 명시적 다운캐스팅
+                AirConditioner airConditioner = (AirConditioner) device;
+                airConditioner.changeMode();
+//                ((AirConditioner) device).changeMode();
+            } else if(device instanceof Computer){
+                Computer computer = (Computer) device;
+                computer.compute();
+            } else if(device instanceof LED){
+                LED led = (LED) device;
+                led.changeColor();
+            } else if(device instanceof Speaker){
+                Speaker speaker = (Speaker) device;
+                speaker.changeEqual();
+            } else if(device instanceof Mouse){
+                Mouse mouse = (Mouse) device;
+                mouse.leftClick();
+            } else if(device instanceof Printer) {
+                Printer printer = (Printer) device;
+                printer.print();
+            }else if(device==null) {
+                System.out.println("장치가 비어있습니다.");
+            }else{  // 아직 instanceof 연산자를 통해서 조건문을 추가하지 못한 class 및
+                    // 추후 update를 통해서 다른 기기들을 지원할 대는 } else 사이에 else if 문을 추가하면 됨.
+                System.out.println("아직 지원하지 않는 기기입니다.");
+            }
+        }
+    }
 }
+
+/*
+Printer 클래스 정의하고 Power 인터페이스 implement 하고 고유 메서드도 print()
+-> "프린터가 인쇄를 합니다" 로 출력
+Main에서 printer1 을 centralcontrol에 추가
+on() / off() 를 실행한 후에
+print() 메서드도 centralcontrol을 통해 실행하시오
+ */
+
+/*
+.getClass() -> 클래스 명을 return 하는 method + 패키지 경로 포함
+.getClass().getSimplename() -> 클래스명만 출력
+
+method의 결과값을 가지고 다시 . 찍어서 그 다음 method 를 호출 했습니다.
+이상의 개념을 chaining method 라고 해서 return 값의 유형을 명확하게 알고 있어야 그 다음 어떤 method를 실행신킬 것인지를 알 수 있습니다.
+ */

@@ -10,4 +10,8 @@ public class AirConditioner implements Power{
     public void off() {
         System.out.println("에어컨의 전원을 끕니다.");
     }
+
+    public void changeMode() {
+        System.out.println("에어컨의 모드를 바꿨습니다.");
+    }
 }
