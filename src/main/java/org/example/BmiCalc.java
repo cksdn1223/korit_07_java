@@ -1,5 +1,7 @@
 package org.example;
 
+import lombok.NonNull;
+
 import java.util.Scanner;
 
 public class BmiCalc {
@@ -33,14 +35,17 @@ public class BmiCalc {
     }
 
     public void calcBmi(Person person) {
-        double bmi = person.getWeight()/((person.getHeight()/100)*(person.getHeight()/100));
+        String name = person.getName();
+        double height = person.getHeight() * 0.01;
+        double weight = person.getWeight();
+        double bmi = weight/(height*height);
         String info = "";
         if(bmi < 18.5) info = "저체중";
         else if(bmi < 23) info = "정상";
         else if(bmi < 25) info = "과체중";
         else if(bmi < 30) info = "비만";
         else info = "고도비만";
-        System.out.println(person.getName() + " 님의 BMI 지수는 " + bmi + "으로 " + info +"입니다.");
+        System.out.println(name + " 님의 BMI 지수는 " + bmi + "으로 " + info +"입니다.");
     }
 
     public static void main(String[] args) {
