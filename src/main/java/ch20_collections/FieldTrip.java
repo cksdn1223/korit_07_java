@@ -19,10 +19,12 @@ public class FieldTrip {
             System.out.println(i+1 + " 번 학생의 후보지 : " + fieldTripsList.get(i));
         }
         System.out.println();
-        Set<String> fieldTripsSet = new HashSet<>();
-        fieldTripsSet.addAll(fieldTripsList);
-        List<String> finalFieldTripsList = new ArrayList<>();
-        finalFieldTripsList.addAll(fieldTripsSet);
+        int[] abc = new int[fieldTripsList.size()];
+        List<Integer> abcd = new ArrayList<>();
+        Set<String> fieldTripsSet = new HashSet<>(fieldTripsList);
+
+
+        List<String> finalFieldTripsList = new ArrayList<>(fieldTripsSet);
         System.out.println("수학 여행 후보지는");
         for(String str : finalFieldTripsList){
             System.out.println(str);
