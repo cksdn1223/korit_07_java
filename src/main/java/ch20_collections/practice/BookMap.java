@@ -76,7 +76,7 @@ import java.util.*;
 //    onProgram();
 //}
 //public static void main(String[] args) {
-//    test run = new test();
+//    Test run = new Test();
 //    run.onProgram();
 //}
 public class BookMap {

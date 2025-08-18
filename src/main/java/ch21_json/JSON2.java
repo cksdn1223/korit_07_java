@@ -29,11 +29,11 @@ public class JSON2 {
 
         // 1. Java Object -> json으로 변환
         /*
-            user1 객체를 생성하고, kim1 / 9876 / a@test.com / 김일 / 20 의 필드값을 가지도록
+            user1 객체를 생성하고, kim1 / 9876 / a@Test.com / 김일 / 20 의 필드값을 가지도록
             하시오.
             그리고 JSON1.java 파일을 참조해서 json 데이터로 바꿔보시오.
          */
-        User user1 = new User("kim1", "9876", "a@test.com", "김일", "20");
+        User user1 = new User("kim1", "9876", "a@Test.com", "김일", "20");
         System.out.println(user1);
         String jsonUser1 = gson.toJson(user1);
         System.out.println(jsonUser1);                  // gson이라서 한 줄 출력
@@ -91,7 +91,7 @@ public class JSON2 {
             gsonBuilder로 fromJson()을 적용하더라도 콘솔 상에서
             prettyPrinting은 적용되지 않습니다.
             결과값 :
-            {username=kim1, password=9876, email=a@test.com, name=김일, age=20}
+            {username=kim1, password=9876, email=a@Test.com, name=김일, age=20}
             이상의 이유는 fromJson()이라는 메서드명에서 알 수 있듯이
             JsonData(즉 String Data)를 Map으로 바꾸는 겁니다.
             String의 경우에는 개행을 통해서 prettyPriting이 적용될 수 있지만,

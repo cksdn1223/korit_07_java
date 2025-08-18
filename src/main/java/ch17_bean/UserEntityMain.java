@@ -5,7 +5,7 @@ public class UserEntityMain {
         UserEntity user1 = new UserEntity();
         user1.setUsername(1);
         user1.setPassword(9876);
-        user1.setEmail("a@test.com");
+        user1.setEmail("a@Test.com");
         user1.setName("김찬우");
 
         System.out.println(user1);
@@ -19,7 +19,7 @@ public class UserEntityMain {
 
         UserEntityLombok user2 = new UserEntityLombok();
         user2.setName("김이");
-        user2.setEmail("b@test.com");
+        user2.setEmail("b@Test.com");
         user2.setPassword(1234);
         user2.setUsername(2);
 

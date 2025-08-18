@@ -10,7 +10,7 @@ public class JSON1 {
         // 속성(키-값 쌍)을 추가하는 메서드 -> addProperty() 메서드
         jsonObject1.addProperty("username",1);
         jsonObject1.addProperty("password",1234);
-        jsonObject1.addProperty("email","a@test.com");
+        jsonObject1.addProperty("email","a@Test.com");
         jsonObject1.addProperty("name","김일");
         jsonObject1.addProperty("score",4.5);
         System.out.println(jsonObject1);
