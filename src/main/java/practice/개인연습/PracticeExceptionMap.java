@@ -1,4 +1,4 @@
-package practice;
+package practice.개인연습;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

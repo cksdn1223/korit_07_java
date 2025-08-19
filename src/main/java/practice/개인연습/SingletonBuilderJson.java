@@ -1,8 +1,7 @@
-package practice;
+package practice.개인연습;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 import lombok.Getter;
 import lombok.ToString;
 

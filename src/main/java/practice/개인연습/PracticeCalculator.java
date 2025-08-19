@@ -1,10 +1,9 @@
-package practice;
-
+package practice.개인연습;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+
 class OnlyUseNumber extends Exception{
     public OnlyUseNumber(String message){
         super(message);
